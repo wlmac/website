@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
+import media from "../../../utils/media";
+
 const ClubInfo = ({tags, links, ...props}) => (
-  <div>
+  <Wrapper>
     <ClubHeader>
       <CircleIcon src="https://via.placeholder.com/150" />
       <ClubDetails>
@@ -15,7 +17,7 @@ const ClubInfo = ({tags, links, ...props}) => (
       </ClubDetails>
     </ClubHeader>
     <ClubBody>
-      <p>
+      <Description>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae
         velit cursus, viverra nisl a, commodo odio. Quisque vel urna eget augue
         vehicula bibendum nec quis neque. Nunc laoreet purus sit amet elit
@@ -29,17 +31,17 @@ const ClubInfo = ({tags, links, ...props}) => (
         euismod ac lorem non, faucibus tincidunt purus. Sed vitae convallis
         odio. Donec ligula libero, finibus a tellus accumsan, mollis fermentum
         justo.
-      </p>
-      <div>
+      </Description>
+      <LinkSection>
         {links.map(link => (
-          <Link>
+          <Link key={link}>
             <CircleIcon src="https://via.placeholder.com/10" />
             <a href={link}>{link}</a>
           </Link>
         ))}
-      </div>
+      </LinkSection>
     </ClubBody>
-  </div>
+  </Wrapper>
 );
 
 const CircleIcon = styled.img`
@@ -49,12 +51,21 @@ const CircleIcon = styled.img`
 `;
 
 const Title = styled.h1`
+  margin: 0;
   font-weight: bold;
 `;
 
 const Tag = styled.p`
   padding: 2px;
   border: 2px black solid;
+`;
+
+const Description = styled.p`
+  width: 80%;
+  margin: 0;
+  padding-left: 1.5rem;
+  padding-right: 2rem;
+  border-left: 2px solid blue;
 `;
 
 const Link = styled.div`
@@ -66,18 +77,45 @@ const TagSection = styled.div`
   /* TODO: prop tag color */
 `;
 
-const ClubBody = styled.div`
-  display: flex;
+const LinkSection = styled.div`
+  width: auto;
+  background-color: red;
 `;
 
 const ClubHeader = styled.div`
   display: flex;
+  ${media(
+    600,
+    `
+    flex-direction: column;
+    align-items: center;
+    `
+  )}
+`;
+
+const ClubBody = styled.div`
+  display: flex;
+  ${media(
+    600,
+    `
+  flex-direction: column-reverse;
+  align-items: center;
+  text-align: center;
+  `
+  )}
 `;
 
 const ClubDetails = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+`;
+
+const Wrapper = styled.div`
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: lightblue;
 `;
 
 export default ClubInfo;
