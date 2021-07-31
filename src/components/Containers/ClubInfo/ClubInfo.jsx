@@ -45,9 +45,14 @@ const ClubInfo = ({
 
 const TopGraphic = styled.img`
   border-bottom: 8px solid blue;
-  margin-bottom: 2rem;
   width: 100%;
   height: 200px;
+  ${media(
+    600,
+    `
+      display: none
+    `
+  )}
 `;
 
 const CircleIcon = styled.img`
@@ -102,6 +107,7 @@ const LinkSection = styled.div`
 
 const ClubHeader = styled.div`
   display: flex;
+  margin-top: 2rem;
   ${media(
     600,
     `
