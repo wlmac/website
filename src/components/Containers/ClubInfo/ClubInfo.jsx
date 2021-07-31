@@ -3,35 +3,23 @@ import styled from "styled-components";
 
 import media from "../../../utils/media";
 
-const ClubInfo = ({tags, links, ...props}) => (
+const ClubInfo = ({graphic, title, tags, description, links, ...props}) => (
   <Wrapper>
     <ClubHeader>
-      <CircleIcon src="https://via.placeholder.com/150" />
+      <CircleIcon src={graphic} />
       <ClubDetails>
-        <Title>ClubName</Title>
+        <Title>{title}</Title>
         <TagSection>
           {tags.map(tag => (
-            <Tag>{tag}</Tag>
+            <Tag key={tag.name} color={tag.color}>
+              {tag.name}
+            </Tag>
           ))}
         </TagSection>
       </ClubDetails>
     </ClubHeader>
     <ClubBody>
-      <Description>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae
-        velit cursus, viverra nisl a, commodo odio. Quisque vel urna eget augue
-        vehicula bibendum nec quis neque. Nunc laoreet purus sit amet elit
-        condimentum faucibus. Ut mi ligula, semper nec pellentesque at, lacinia
-        id purus. Phasellus ut pretium leo, vitae rutrum velit. Praesent ac elit
-        egestas, scelerisque augue sit amet, aliquet ante. Fusce nec massa
-        porttitor, dapibus urna eu, viverra augue. Praesent dignissim vehicula
-        est, id fermentum mauris hendrerit sed. Aliquam pellentesque quam ut
-        dolor efficitur imperdiet. Etiam ut lacus viverra, aliquam mi in, dictum
-        tellus. Nam posuere est ut ante lacinia sagittis. Proin quam augue,
-        euismod ac lorem non, faucibus tincidunt purus. Sed vitae convallis
-        odio. Donec ligula libero, finibus a tellus accumsan, mollis fermentum
-        justo.
-      </Description>
+      <Description>{description}</Description>
       <LinkSection>
         {links.map(link => (
           <Link key={link}>
@@ -59,6 +47,9 @@ const Tag = styled.p`
   padding: 2px 4px;
   margin-right: 6px;
   border: 2px black solid;
+  ${({color}) => `
+    background-color: ${color}
+  `}
 `;
 
 const Description = styled.p`
@@ -85,7 +76,6 @@ const Link = styled.div`
 
 const TagSection = styled.div`
   display: flex;
-  /* TODO: prop tag color */
 `;
 
 const LinkSection = styled.div`
