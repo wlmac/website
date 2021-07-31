@@ -4,7 +4,8 @@ import ClubInfo from "../components/Containers/ClubInfo/ClubInfo";
 const Clubs = () => (
   <div>
     <ClubInfo
-      graphic="https://via.placeholder.com/150"
+      topGraphic="http://via.placeholder.com/100"
+      clubIcon="https://via.placeholder.com/150"
       title="MCPT"
       tags={[
         {

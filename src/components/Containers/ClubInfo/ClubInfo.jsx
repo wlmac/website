@@ -3,34 +3,52 @@ import styled from "styled-components";
 
 import media from "../../../utils/media";
 
-const ClubInfo = ({graphic, title, tags, description, links, ...props}) => (
-  <Wrapper>
-    <ClubHeader>
-      <CircleIcon src={graphic} />
-      <ClubDetails>
-        <Title>{title}</Title>
-        <TagSection>
-          {tags.map(tag => (
-            <Tag key={tag.name} color={tag.color}>
-              {tag.name}
-            </Tag>
+const ClubInfo = ({
+  topGraphic,
+  clubIcon,
+  title,
+  tags,
+  description,
+  links,
+  ...props
+}) => (
+  <div>
+    <TopGraphic src={topGraphic} />
+    <Wrapper>
+      <ClubHeader>
+        <CircleIcon src={clubIcon} />
+        <ClubDetails>
+          <Title>{title}</Title>
+          <TagSection>
+            {tags.map(tag => (
+              <Tag key={tag.name} color={tag.color}>
+                {tag.name}
+              </Tag>
+            ))}
+          </TagSection>
+        </ClubDetails>
+      </ClubHeader>
+      <ClubBody>
+        <Description>{description}</Description>
+        <LinkSection>
+          {links.map(link => (
+            <Link key={link}>
+              <CircleIcon src="https://via.placeholder.com/10" />
+              <a href={link}>{link}</a>
+            </Link>
           ))}
-        </TagSection>
-      </ClubDetails>
-    </ClubHeader>
-    <ClubBody>
-      <Description>{description}</Description>
-      <LinkSection>
-        {links.map(link => (
-          <Link key={link}>
-            <CircleIcon src="https://via.placeholder.com/10" />
-            <a href={link}>{link}</a>
-          </Link>
-        ))}
-      </LinkSection>
-    </ClubBody>
-  </Wrapper>
+        </LinkSection>
+      </ClubBody>
+    </Wrapper>
+  </div>
 );
+
+const TopGraphic = styled.img`
+  border-bottom: 8px solid blue;
+  margin-bottom: 2rem;
+  width: 100%;
+  height: 200px;
+`;
 
 const CircleIcon = styled.img`
   border: 2px solid black;
@@ -96,6 +114,7 @@ const ClubHeader = styled.div`
 
 const ClubBody = styled.div`
   display: flex;
+  margin-top: 10px;
   ${media(
     600,
     `
