@@ -4,8 +4,8 @@ import ClubInfo from "../components/Containers/ClubInfo/ClubInfo";
 const Clubs = () => (
   <div>
     <ClubInfo
-      tags={["technology", "science"]}
-      links={["http://example.org/", "http://example.org/"]}
+      tags={["technology", "science", "math"]}
+      links={["http://example.org/", "http://example.org/", "http://example.org/"]}
     />
   </div>
 );

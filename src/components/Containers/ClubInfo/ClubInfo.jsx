@@ -56,16 +56,27 @@ const Title = styled.h1`
 `;
 
 const Tag = styled.p`
-  padding: 2px;
+  padding: 2px 4px;
+  margin-right: 6px;
   border: 2px black solid;
 `;
 
 const Description = styled.p`
-  width: 80%;
+  width: 60%;
   margin: 0;
   padding-left: 1.5rem;
   padding-right: 2rem;
-  border-left: 2px solid blue;
+  margin-left: 80px;
+  border-left: 5px solid blue;
+  ${media(
+    600,
+    `
+      border: 0;
+      padding: 0;
+      margin: 10px 0;
+      width: auto;
+    `
+  )}
 `;
 
 const Link = styled.div`
@@ -79,7 +90,6 @@ const TagSection = styled.div`
 
 const LinkSection = styled.div`
   width: auto;
-  background-color: red;
 `;
 
 const ClubHeader = styled.div`
@@ -87,8 +97,9 @@ const ClubHeader = styled.div`
   ${media(
     600,
     `
-    flex-direction: column;
-    align-items: center;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     `
   )}
 `;
@@ -98,10 +109,10 @@ const ClubBody = styled.div`
   ${media(
     600,
     `
-  flex-direction: column-reverse;
-  align-items: center;
-  text-align: center;
-  `
+      flex-direction: column-reverse;
+      align-items: center;
+      text-align: center;
+    `
   )}
 `;
 
@@ -109,13 +120,13 @@ const ClubDetails = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  margin-left: 1rem;
 `;
 
 const Wrapper = styled.div`
   width: 90%;
   margin-left: auto;
   margin-right: auto;
-  background-color: lightblue;
 `;
 
 export default ClubInfo;
