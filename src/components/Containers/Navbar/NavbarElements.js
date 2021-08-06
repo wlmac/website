@@ -1,6 +1,6 @@
 import {
 	FaBars
- } from 'react-icons/fa';
+} from 'react-icons/fa';
 import {
 	NavLink as Link
 } from 'react-router-dom';
@@ -25,10 +25,9 @@ export const NavLink = styled(Link)`
 	height: 100%;
 	cursor: pointer;
 	&.active {
-		color: #000000;
+		font-weight: bold;
 	}
 	font: 18px Roboto, sans-serif;
-	font-weight: bold;
 `;
 
 export const Bars = styled(FaBars)`
