@@ -76,7 +76,6 @@ const Tag = styled.p`
 `;
 
 const Description = styled.p`
-  width: 60%;
   margin: 0;
   padding-left: 1.5rem;
   padding-right: 2rem;
@@ -139,9 +138,7 @@ const ClubDetails = styled.div`
 `;
 
 const Wrapper = styled.div`
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+	margin: 0.2rem calc((100vw - 1500px) / 2);
 `;
 
 export default ClubInfo;

@@ -11,7 +11,7 @@ export const Nav = styled.nav`
 	height: 75px;
 	display: flex;
 	justify-content: space-between;
-	padding: 0.2rem calc((100vw - 1000px) / 2);
+	padding: 0.2rem calc((100vw - 1500px) / 2);
 	z-index: 12;
     box-shadow: 0px 0px 16px 2px #000000;
 `;
@@ -21,7 +21,7 @@ export const NavLink = styled(Link)`
 	display: flex;
 	align-items: center;
 	text-decoration: none;
-	padding: 0 1rem;
+	padding: 0 2rem;
 	height: 100%;
 	cursor: pointer;
 	&.active {
