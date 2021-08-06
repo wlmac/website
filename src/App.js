@@ -6,15 +6,15 @@ import Home from './pages';
 import Clubs from './pages/clubs';
   
 function App() {
-  return (
-    <Router>
-		<Navbar />
-		<Switch>
-			<Route path='/' exact component={Home} />
-			<Route path='/clubs' component={Clubs} />
-		</Switch>
-    </Router>
-  );
+  	return (
+		<Router>
+			<Navbar pages={['Clubs', 'Clubs']}/>
+			<Switch>
+				<Route path='/' exact component={Home} />
+				<Route path='/clubs' component={Clubs} />
+			</Switch>
+		</Router>
+  	);
 }
 
 export default App;

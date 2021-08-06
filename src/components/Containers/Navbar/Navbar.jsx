@@ -8,17 +8,18 @@ import {
     NavBtnLink
 } from './NavbarElements';
 
-const Navbar = () => {
+const Navbar = (props) => {
+	const navPaths = props.pages.map((page) =>
+		<NavLink to={'/'+page.toLowerCase()} activeStyle>
+		{page}
+		</NavLink>
+	);
     return (
 		<>
 			<Nav>
 			<Bars />
 			<NavMenu>
-				<NavLink to='/clubs' activeStyle>
-				Clubs
-				</NavLink>
-				{/* Second Nav */}
-				{/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
+				{navPaths}
 			</NavMenu>
 			</Nav>
 		</>
