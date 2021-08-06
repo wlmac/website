@@ -44,7 +44,7 @@ const ClubInfo = ({
 );
 
 const TopGraphic = styled.img`
-  border-bottom: 8px solid blue;
+  border-bottom: 12px solid #15375d;
   width: 100%;
   height: 200px;
   ${media(
@@ -80,7 +80,7 @@ const Description = styled.p`
   padding-left: 1.5rem;
   padding-right: 2rem;
   margin-left: 80px;
-  border-left: 5px solid blue;
+  border-left: 5px solid #7faad5;
   ${media(
     600,
     `
