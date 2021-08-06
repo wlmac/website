@@ -9,7 +9,7 @@ import {
 } from './NavbarElements';
 
 const Navbar = (props) => {
-	const navPaths = props.pages.map((page) =>
+	const paths = props.pages.map((page) =>
 		<NavLink to={'/'+page.toLowerCase()} activeStyle>
 		{page}
 		</NavLink>
@@ -19,7 +19,7 @@ const Navbar = (props) => {
 			<Nav>
 			<Bars />
 			<NavMenu>
-				{navPaths}
+				{paths}
 			</NavMenu>
 			</Nav>
 		</>
