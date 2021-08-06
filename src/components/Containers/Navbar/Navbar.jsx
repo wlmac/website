@@ -1,29 +1,27 @@
-import React from 'react'
+import React from "react";
 import {
-    Nav,
-    NavLink,
-    Bars,
-    NavMenu,
-    NavBtn,
-    NavBtnLink
-} from './NavbarElements';
+	Nav,
+	NavLink,
+	Bars,
+	NavMenu,
+	NavBtn,
+	NavBtnLink,
+} from "./NavbarElements";
 
 const Navbar = (props) => {
-	const paths = props.pages.map((page) =>
-		<NavLink to={'/'+page.toLowerCase()} activeStyle>
-		{page}
+	const paths = props.pages.map((page) => (
+		<NavLink to={"/" + page.toLowerCase()} activeStyle>
+			{page}
 		</NavLink>
-	);
-    return (
+	));
+	return (
 		<>
 			<Nav>
-			<Bars />
-			<NavMenu>
-				{paths}
-			</NavMenu>
+				<Bars />
+				<NavMenu>{paths}</NavMenu>
 			</Nav>
 		</>
-    );
+	);
 };
 
-export default Navbar
+export default Navbar;

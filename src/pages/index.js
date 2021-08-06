@@ -1,20 +1,18 @@
-import React from 'react';
-  
+import React from "react";
+
 const Home = () => {
 	return (
 		<div
-		style={
-			{
-				display: 'flex',
-				justifyContent: 'Right',
-				alignItems: 'Right',
-				height: '100vh'
-			}
-		}
+			style={{
+				display: "flex",
+				justifyContent: "Right",
+				alignItems: "Right",
+				height: "100vh",
+			}}
 		>
-		<h1>HI LOL HOME.</h1>
+			<h1>HI LOL HOME.</h1>
 		</div>
 	);
 };
-  
+
 export default Home;
