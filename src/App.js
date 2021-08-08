@@ -6,7 +6,7 @@ import Home from "./pages";
 import Clubs from "./pages/clubs";
 
 function App() {
-	const pages = ["Clubs"];
+	const pages = ["News", "Blog", "Clubs", "Calendar", "Contact", "Login"];
 	return (
 		<Router>
 			<Navbar pages={pages} />

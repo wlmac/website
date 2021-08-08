@@ -10,7 +10,7 @@ export const Nav = styled.nav`
 	background: #15375d;
 	height: 75px;
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-end;
 	padding: 0.2rem calc((100vw - 1500px) / 2);
 	z-index: 12;
     box-shadow: 0px 0px 16px 2px #000000;
